@@ -1,0 +1,26 @@
+<mat-sidenav-container class="employee-container">
+    <mat-sidenav mode="side" opened >
+        <div class="site-logo">
+            <figure>
+                <img src="./../../../assets/Infrrd-Logo-Transparent.png" alt="Trulli" style="width:100%">
+              </figure>
+        </div>
+        <app-side-navs></app-side-navs>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        @if (showAddEmployee) {
+            <div class="header">
+            </div>
+            <div class="employees-container">
+                <app-add-employee></app-add-employee>
+            </div>
+        } @else {
+            <div class="header">
+                <app-header (addEmployee)="onAddEmployee()"></app-header>
+            </div>
+            <div class="employees-container">
+                <app-employees class="employees"></app-employees>
+            </div>
+        }
+    </mat-sidenav-content>
+</mat-sidenav-container>

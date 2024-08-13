@@ -1,0 +1,57 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .employee-card {
+    width: 600px;
+    background-color: white;
+    margin: 0 auto;
+    color: black;
+    mat-card-subtitle {
+        color: gray;
+    }
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    .error {
+        color: red;
+        margin: 5px auto;
+        text-align: center;
+    }
+    .mdc-button {
+        color: black;
+        border-color: black;
+        margin-right: 20px;
+        &.danger {
+            &:hover {
+                background-color: rgb(235, 180, 170);
+            }
+            color: rgb(244, 93, 66);
+            border-color: rgb(244, 93, 66);
+        }
+        &.primary {
+            &:hover {
+                background-color: rgb(195, 195, 247);
+            }
+            color: rgb(77, 77, 237);
+            border-color: rgb(77, 77, 237);
+        }
+    }
+
+    .mat-mdc-card-content {
+        padding: 0;
+    }
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    ::ng-deep {
+        .mat-mdc-card-header div {
+            margin: 0 auto;
+        }
+    }
+
+  }
+  

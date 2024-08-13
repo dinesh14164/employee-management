@@ -1,0 +1,36 @@
+.employee-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: black;
+    background: #eee;
+    
+    .mat-drawer-opened {
+        width: 200px;
+        background-color: white;
+        border-right: 1px solid lightgray;
+        color: black;
+    }
+    .site-logo {
+        height: 60px;   
+        figure {
+            margin: 0px;
+            margin-left: 10px;
+            width: 120px;
+        }     
+    }
+    .header {
+        height: 60px;
+        background-color: white;
+        border-bottom: 1px solid lightgray;
+    }
+    .mat-drawer-content {
+        background-color: rgb(247, 252, 240);
+        .employees-container {
+            padding: 20px;
+        }
+    }
+  }
+  

@@ -1,0 +1,29 @@
+<div class="nav-container">
+    <div class="top-navs">
+        <mat-list role="list">
+            @for (nav of topNavigations; track $index) {
+                <mat-list-item role="listitem" (click)="onNavItemClick(nav)"
+                    [class]="selectedNavItem.name === nav.name ? 'selected' : ''"
+                >
+                    <div class="phone-number">
+                        <mat-icon aria-hidden="false" aria-label="phone icon" [fontIcon]="nav.icon"></mat-icon>
+                        <span class="number">{{nav.name}}</span>
+                    </div>
+                </mat-list-item>
+            }
+        </mat-list>
+    </div>
+    <div class="bottom-navs">
+        <mat-list role="list">
+            @for (nav of bottomNavigations; track $index) {
+                <mat-list-item role="listitem">
+                    <div class="phone-number">
+                        <mat-icon aria-hidden="false" aria-label="phone icon" [fontIcon]="nav.icon"></mat-icon>
+                        <span class="number">{{nav.name}}</span>
+                    </div>
+                </mat-list-item>
+            }
+        </mat-list>
+    </div>
+</div>
+  

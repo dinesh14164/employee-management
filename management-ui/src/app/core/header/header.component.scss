@@ -1,0 +1,19 @@
+$nav-color: #31c531;
+.header-container {
+    display: flex;
+    flex-direction: row;
+    mat-icon {
+        margin-right: 10px;
+        vertical-align: bottom;
+    }
+    .d-inline-block {
+        margin: 10px;
+        margin-left: auto;
+    }
+}
+.mat-mdc-fab.mat-accent {
+    color: $nav-color;
+    background-color: white;
+    height: 40px;
+    margin: 10px;
+}

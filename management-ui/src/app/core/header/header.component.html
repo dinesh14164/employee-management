@@ -1,0 +1,19 @@
+<div class="header-container">
+    <div class="example-button-container">
+        <button mat-fab extended (click)="onAddEmployee()">
+          <mat-icon>add</mat-icon>
+          Add Employee
+        </button>
+    </div>
+    <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+            <mat-icon>group</mat-icon>
+            {{selectedTeam ? selectedTeam : 'Choose Team'}}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            @for (team of teams; track $index) {
+                <button ngbDropdownItem (click)="onSelectTeam(team)">{{team}}</button>
+            }
+        </div>
+    </div>
+</div>

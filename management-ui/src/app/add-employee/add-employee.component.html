@@ -1,0 +1,82 @@
+<mat-card appearance="outlined" class="employee-card">
+    <mat-card-header>
+      <mat-card-title>Add Employee Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        @if (errorMsg.length) {
+            @for (error of errorMsg; track $index) {
+                <div class="error">
+                    <span class="text">{{error}}</span>
+                </div>
+            }
+        }
+        <div action="" class="form-container">
+            <div class="form-element">
+                <label for="firstname" class="first-name">First Name</label>
+                <input class="form-control" type="text" [(ngModel)]="empDetails.firstName" placeholder="" name="firstame" required>
+            </div>
+            <div class="form-element">
+                <label for="lastname" class="last-name">Last Name</label>
+                <input class="form-control" type="text" [(ngModel)]="empDetails.lastName" placeholder="" name="lastname">
+            </div>
+            <div class="form-element">
+                <label for="companyname" class="company-name">Company Name</label>
+                <input class="form-control" type="text" [(ngModel)]="empDetails.companyName" placeholder="" name="companyname">
+            </div>
+            <div class="form-element">
+                <label for="experience" class="experience">experience</label>
+                <input class="form-control" type="text" [(ngModel)]="empDetails.experience" placeholder="" name="experience">
+            </div>
+            <div class="form-element">
+                <label for="designation" class="experience">designation</label>
+                <input class="form-control" type="text" placeholder="" [(ngModel)]="empDetails.designation" name="designation">
+            </div>
+            <div class="form-element">
+                <label for="year" class="year">Joining Year</label>
+                <input class="form-control" type="text" placeholder="" name="year" [(ngModel)]="empDetails.joiningDate">
+            </div>
+            <div class="form-element">
+                <label for="team" class="team">Team</label>
+                <input class="form-control" type="text" placeholder="" name="team" [(ngModel)]="empDetails.team">
+            </div>
+            <div class="form-element">
+                <label for="manager" class="manager">Manager</label>
+                <input class="form-control" type="text" placeholder="" name="manager" [(ngModel)]="empDetails.manager">
+            </div>
+            <div class="form-element">
+                <label for="email" class="form-label email">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="empDetails.email">
+            </div>
+            <div class="form-element">
+                <label for="contact" class="form-label email">Contact Number</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">+91</span>
+                    <input type="text" class="form-control" placeholder="" [(ngModel)]="empDetails.contactNo">
+                </div>
+            </div>
+            <div class="form-element">
+                <button type="submit" class="btn btn-primary mb-3" (click)="onSubmit()">Submit</button>
+                <button type="button" class="btn btn-outline-danger mb-3 ms-3">Cancel</button>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+
+<!-- <mat-form-field>
+    <mat-label>Input</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option value="one">First option</mat-option>
+      <mat-option value="two">Second option</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field> -->
+  

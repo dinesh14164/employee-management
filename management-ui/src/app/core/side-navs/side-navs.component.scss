@@ -1,0 +1,45 @@
+$nav-color: #31c531;
+.nav-container {
+    display: flex;
+    height: calc(100% - 60px);
+    flex-direction: column;
+    .bottom-navs {
+      margin-top: auto;
+      margin-bottom: 50px;
+    }
+    mat-icon {
+        margin-right: 10px;
+        vertical-align: text-top;
+    }
+    .material-icons {
+        font-size: 18px;
+        color: $nav-color;
+    }
+    
+}
+:host {
+    ::ng-deep {
+        mat-list-item,
+        mat-list-item:hover {
+            &:first-child {
+                // border-top: 1px solid $nav-color;
+            }
+            // border-bottom: 1px solid $nav-color;
+            padding-left: 20px;
+            padding-left: 20px;
+            .mdc-list-item__primary-text,
+            .mdc-list-item__primary-text:hover
+            .mdc-list-item__primary-text:focus {
+                font-size: 16px;
+                color: $nav-color;
+            }
+        }
+        
+        mat-list-item:hover {
+            background-color: #cdf0cd33;
+        }
+        mat-list-item.selected {
+            background-color: #7fe07f33;
+        }
+    }
+  }

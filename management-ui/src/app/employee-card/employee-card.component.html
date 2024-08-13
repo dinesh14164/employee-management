@@ -1,0 +1,46 @@
+@if (employee) {
+    <mat-card class="employee-card" appearance="outlined">
+        <mat-card-header>
+          <div mat-card-avatar class="employee-header-image"></div>
+          <mat-card-title>{{employee.firstName + ' ' + employee.lastName}}</mat-card-title>
+          <mat-card-subtitle>{{employee.designation}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list role="list">
+                <mat-list-item role="listitem">
+                    <div class="emp-details">
+                        <div class="experience">
+                            <span>Experience: <strong>{{employee.experience}}</strong></span>
+                        </div>
+                        <div class="doj">
+                            <span>Date of Joining: <strong>{{employee.joiningDate}}</strong></span>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                    Current Team: <strong>{{employee.team}}</strong>
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                    Reporting Manager: <strong>{{employee.manager}}</strong>
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                    <div class="contact">
+                        <div class="phone-number">
+                            <mat-icon aria-hidden="false" aria-label="phone icon" fontIcon="phone"></mat-icon>
+                            <span class="number">{{employee.contactNo}}</span>
+                        </div>
+                        <div class="email">
+                            <mat-icon aria-hidden="false" aria-label="email icon" fontIcon="email"></mat-icon>
+                            <span class="email-id">{{employee.email}}</span>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button class="danger">Delete</button>
+          <button mat-stroked-button class="primary">Edit</button>
+        </mat-card-actions>
+    </mat-card>
+}
+  

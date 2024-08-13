@@ -1,0 +1,68 @@
+.employee-card {
+    width: 350px;
+    background-color: white;
+    color: black;
+    mat-card-subtitle {
+        color: gray;
+    }
+    .mdc-button {
+        color: black;
+        border-color: black;
+        margin-right: 20px;
+        &.danger {
+            &:hover {
+                background-color: rgb(235, 180, 170);
+            }
+            color: rgb(244, 93, 66);
+            border-color: rgb(244, 93, 66);
+        }
+        &.primary {
+            &:hover {
+                background-color: rgb(195, 195, 247);
+            }
+            color: rgb(77, 77, 237);
+            border-color: rgb(77, 77, 237);
+        }
+    }
+
+    .mat-mdc-card-content {
+        padding: 0;
+    }
+    .emp-details,
+    .contact {
+        display: flex;
+        gap: 20px;
+        mat-icon {
+            // margin-right: 5px;
+            vertical-align: text-top;
+        }
+        .material-icons {
+            font-size: 16px;
+        }
+    }
+    border: 1px solid lightgray;
+    border-radius: 5px;
+
+  }
+  
+  .employee-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  :host {
+    ::ng-deep {
+        mat-list-item,
+        mat-list-item:hover {
+            &:first-child {
+                border-top: 1px solid lightgray;
+            }
+            border-bottom: 1px solid lightgray;
+            .mdc-list-item__primary-text,
+            .mdc-list-item__primary-text:hover
+            .mdc-list-item__primary-text:focus {
+                color: black;
+                font-size: 0.75rem;
+            }
+        }
+    }
+  }
