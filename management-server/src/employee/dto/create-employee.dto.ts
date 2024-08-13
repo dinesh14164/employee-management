@@ -13,6 +13,9 @@ export class CreateEmployeeDto {
   @IsString()
   readonly companyName: string;
 
+  @IsString()
+  readonly designation: string;
+
   @IsEmail()
   readonly email: string;
 

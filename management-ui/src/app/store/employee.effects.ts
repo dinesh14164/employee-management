@@ -16,7 +16,34 @@ export class EmployeeEffect{
         this.actions$.pipe(
             ofType(ActionTypes.setEmployeeType),
             switchMap(() => this.employeeService.getAllEmployees().pipe(
-                map((emps) => ({type: ActionTypes.updateEmployeeType, employees: employees}))
+                map((emps) => ({type: ActionTypes.updateEmployeeType, employees: emps}))
+            ))
+        )
+    );
+
+    addEmployee$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ActionTypes.addEmployee),
+            switchMap((actions: any) => this.employeeService.addEmployee(actions.employee).pipe(
+                map(() => ({ type: ActionTypes.setEmployeeType }))
+            ))
+        )
+    );
+
+    updateEmployee$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ActionTypes.updateEmployee),
+            switchMap((actions: any) => this.employeeService.updateEmployee(actions.id, actions.employee).pipe(
+                map(() => ({ type: ActionTypes.setEmployeeType }))
+            ))
+        )
+    );
+
+    deleteEmployee$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ActionTypes.deleteEmployee),
+            switchMap((actions: any) => this.employeeService.deleteEmployee(actions.id).pipe(
+                map(() => ({ type: ActionTypes.setEmployeeType }))
             ))
         )
     );

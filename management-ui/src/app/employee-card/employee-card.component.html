@@ -1,7 +1,25 @@
+<ng-template #removeEmp let-modal>
+    <div class="modal-header">
+		<h4 class="modal-title">Delete Employee</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+        Are you sure?
+	</div>
+	<div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="deleteEmployee()">Yes</button>
+		<button type="button" class="btn btn-danger ms-3" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+
 @if (employee) {
     <mat-card class="employee-card" appearance="outlined">
         <mat-card-header>
-          <div mat-card-avatar class="employee-header-image"></div>
+          <div mat-card-avatar class="employee-header-image">
+            <figure>
+                <img [src]="'./../../assets/' + (employee.avatarUrl.length ? employee.avatarUrl : 'human.png')" alt="">
+            </figure>
+          </div>
           <mat-card-title>{{employee.firstName + ' ' + employee.lastName}}</mat-card-title>
           <mat-card-subtitle>{{employee.designation}}</mat-card-subtitle>
         </mat-card-header>
@@ -38,8 +56,8 @@
             </mat-list>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-stroked-button class="danger">Delete</button>
-          <button mat-stroked-button class="primary">Edit</button>
+          <button mat-stroked-button class="danger" (click)="confirmDelete(removeEmp)">Delete</button>
+          <button mat-stroked-button class="primary"(click)="onEdit(employee.id)" >Edit</button>
         </mat-card-actions>
     </mat-card>
 }

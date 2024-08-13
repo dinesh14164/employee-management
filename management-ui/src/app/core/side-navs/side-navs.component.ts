@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { Navigation } from '../../models/employee.model';
@@ -52,7 +52,10 @@ export class SideNavsComponent {
   ];
 
   selectedNavItem: Navigation = this.topNavigations[0];
+  @Output() selectedSideNav = new EventEmitter<string>();
+
   onNavItemClick(item: Navigation) {
     this.selectedNavItem = item;
+    this.selectedSideNav.emit(item.name);
   }
 }

@@ -1,0 +1,41 @@
+<div class="search-container">
+    <div ngbDropdown class="d-inline-block">
+        <label class="label">Team</label>
+        <button type="button" class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>
+            {{selectedTeam ? selectedTeam : 'Choose Iteam'}}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            @for (team of teams; track $index) {
+                <button ngbDropdownItem (click)="onSelectDepartment(team)">{{team}}</button>
+            }
+        </div>
+    </div>
+    <div ngbDropdown class="d-inline-block">
+        <label class="label">Designation</label>
+        <button type="button" class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>
+            {{selectedDesignation ? selectedDesignation : 'Choose Iteam'}}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            @for (des of designations; track $index) {
+                <button ngbDropdownItem (click)="onSelectDesignation(des)">{{des}}</button>
+            }
+        </div>
+    </div>
+    <div ngbDropdown class="d-inline-block">
+        <label class="label">Joining Date</label>
+        <button type="button" class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>
+            {{selectedJoiningDate ? selectedJoiningDate : 'Choose Iteam'}}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            @for (year of joiningDates; track $index) {
+                <button ngbDropdownItem (click)="onSelectJoiningYear(year)">{{year}}</button>
+            }
+        </div>
+    </div>
+    <button type="button" class="btn btn-outline-primary apply-filters m-3 mt-5" (click)="onApplyFilters()" >
+        Apply Filters
+    </button>
+    <button type="button" class="btn btn-outline-danger apply-filters m-3" (click)="onResetFilters()">
+        Reset
+    </button>
+</div>

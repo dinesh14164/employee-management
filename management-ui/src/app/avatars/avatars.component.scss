@@ -1,0 +1,11 @@
+.avatars-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    .avatar {
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}

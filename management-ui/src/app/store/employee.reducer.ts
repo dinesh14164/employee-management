@@ -1,10 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
 import { EmployeeManagementState } from '../models/employee-management.state';
-import { setEmployees, updateEmployees } from './employee.actions';
+import { setEmployees, updateEmployees, updateFilters } from './employee.actions';
 
 export const initialState: EmployeeManagementState = {
     employees: [],
-    filters: []
+    filters: {}
 };
 
 export const employeeReducer = createReducer(
@@ -13,6 +13,12 @@ export const employeeReducer = createReducer(
     return {
         ...state,
         employees: actions.employees,
+    }
+  }),
+  on(updateFilters, (state, actions) => {
+    return {
+        ...state,
+        filters: actions.filters,
     }
   })
 );

@@ -3,6 +3,7 @@
         @for (employee of employees; track $index) {
             <app-employee-card
                 [employee]="employee"
+                (editEmp)="editEmp($event)"
             ></app-employee-card>
             
         }

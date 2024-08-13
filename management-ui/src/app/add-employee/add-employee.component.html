@@ -1,3 +1,15 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+		<h4 class="modal-title">Select Avatars</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+        <app-avatars (getAvatar)="setAvatar($event)"></app-avatars>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
 <mat-card appearance="outlined" class="employee-card">
     <mat-card-header>
       <mat-card-title>Add Employee Details</mat-card-title>
@@ -11,6 +23,18 @@
             }
         }
         <div action="" class="form-container">
+            <div class="form-element avatar-box">
+                <div class="btn-container">
+                    <button type="button" class="btn btn-outline-primary mb-3" (click)="openVerticallyCentered(content)">Choose avatar</button>
+                </div>
+                @if (empDetails.avatarUrl.length) {
+                    <div class="avatar m-3">
+                        <figure>
+                            <img [src]="'./../../assets/' + empDetails.avatarUrl" alt="">
+                        </figure>
+                    </div>
+                }
+            </div>
             <div class="form-element">
                 <label for="firstname" class="first-name">First Name</label>
                 <input class="form-control" type="text" [(ngModel)]="empDetails.firstName" placeholder="" name="firstame" required>
@@ -56,7 +80,7 @@
             </div>
             <div class="form-element">
                 <button type="submit" class="btn btn-primary mb-3" (click)="onSubmit()">Submit</button>
-                <button type="button" class="btn btn-outline-danger mb-3 ms-3">Cancel</button>
+                <button type="button" class="btn btn-outline-danger mb-3 ms-3" (click)="onCancel()">Cancel</button>
             </div>
         </div>
     </mat-card-content>

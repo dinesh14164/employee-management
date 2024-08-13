@@ -5,21 +5,40 @@
                 <img src="./../../../assets/Infrrd-Logo-Transparent.png" alt="Trulli" style="width:100%">
               </figure>
         </div>
-        <app-side-navs></app-side-navs>
+        <app-side-navs
+            (selectedSideNav)="onSelectNav($event)"
+        ></app-side-navs>
     </mat-sidenav>
     <mat-sidenav-content>
         @if (showAddEmployee) {
             <div class="header">
             </div>
             <div class="employees-container">
-                <app-add-employee></app-add-employee>
+                @if (edit && editEmployee) {
+                    <app-add-employee
+                        [edit]="edit"
+                        [employee]="editEmployee"
+                        (closed)="hideAddEmployee()"
+                    ></app-add-employee>
+                } @else {
+                    <app-add-employee
+                        (closed)="hideAddEmployee()"
+                    ></app-add-employee>
+                }
             </div>
         } @else {
             <div class="header">
                 <app-header (addEmployee)="onAddEmployee()"></app-header>
             </div>
-            <div class="employees-container">
-                <app-employees class="employees"></app-employees>
+            <div class="dashboard-content">
+                @if (showSearchFilters) {
+                    <div class="search-filters" style="width: 200px;">
+                        <app-search-filters></app-search-filters>
+                    </div>
+                }
+                <div class="employees-container">
+                    <app-employees class="employees" (onEmpEdit)="onEditEmployee($event)"></app-employees>
+                </div>
             </div>
         }
     </mat-sidenav-content>

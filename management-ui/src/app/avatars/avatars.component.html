@@ -1,0 +1,11 @@
+<div class="avatars-container">
+    @for (avt of avatars; track $index) {
+        <div class="avatar">
+            <button class="btn btn-outline-primary " (click)="onSelect(avt)">
+                <figure>
+                    <img [src]="'./../../assets/' + avt" alt="">
+                </figure>
+            </button>
+        </div>
+    }
+</div>

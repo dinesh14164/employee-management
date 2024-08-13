@@ -18,6 +18,9 @@ export class Employee extends Model {
     companyName: string;
 
     @Column
+    designation: string;
+
+    @Column
     email: string;
 
     @Column

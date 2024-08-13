@@ -1,0 +1,24 @@
+.d-inline-block {
+    width: 100%;
+    gap: 5px;
+    .label {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        color: rgb(89, 81, 81);
+    }
+}
+.search-container {
+    display: flex;
+    flex-direction: column;
+    
+    .apply-filters {
+        margin-top: auto;
+    }
+}
+.btn-outline-secondary {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    border-radius: 0;
+    width: 100%;
+}
